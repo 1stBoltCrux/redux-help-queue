@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import ticketListReducer from './reducers/ticket-list-reducer';
+import selectedTicketReducer from './reducers/selected-ticket-reducer';
+import rootReducer from './reducers/index';
 import { createStore } from 'redux';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-const store = createStore(ticketListReducer);
+
+
+const store = createStore(rootReducer);
 
 let unsubscribe = store.subscribe(() =>
 console.log(store.getState())
